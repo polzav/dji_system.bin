@@ -1,4 +1,36 @@
 # dji_system.bin
+
+Установка любой прошивки на коптеры DJI Mavic, Phantom 4 и 4 Pro/Adv, Inspire 2, DJI Goggles.
+
+---
+Спасибо добрым хакерам и добрым людям за их старания и труд.
+Спасибо за оперативную подсказку где копать этому добряку: http://vk.com/pintik
+---
+
+Пишу на примере Mac за не имением винды...
+Все процедуры на примере Ph4.
+
+Качаем нужную прошивку с GitHub: https://github.com/MAVProxyUser/dji_system.bin
+Качаем Phyton скрипт: https://github.com/hdnes/pyduml
+
+Файл прошивки переименовываем в dji_system.bin
+
+Подключаем Фантом через USB кабель к Маку. Включаем Фантом.
+Смотрим какой номер присвоился USB модему: 
+ls /dev |grep usb
+
+Запускаем скрипт командой python pyduml.py /dev/cu.usbmodem1415
+где 1415 - это номер модема.
+Выбираем тип продукта, который будем шить: Коптер, Пульт или Очки.
+
+Ждем минуту, пока прошивка заливается в коптер. По завершении передачи файла выйдет такая надпись: dji_system.bin delivered via FTP
+
+Теперь можно отцепить Коптер от Мака, но не выключайте его. Ждите пока он прошивается. Минут 20-30. Пока моргает Красно-зеленым диод на подвесе - питание отключать нельзя.
+
+Когда диод на подвесе загорится зеленым - все гуд. Прошивка встала как нужно.
+
+==========================================
+
 WARNING! Use this repo at your own risk. You CAN brick your DJI product if you don't know what you are doing.  
 The author is not responsible for direct, indirect, incidental or consequential damages resulting from any defect, error or failure of this code repository to perform.
 
